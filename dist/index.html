@@ -4,13 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wbpack Exercise</title>
-<<<<<<< Updated upstream
-<script defer src="main.js"></script></head>
-<body>
-    <h1>Hello webpack!</h1>
-=======
     <link rel="stylesheet" href="style.css">
-    <script src="index.js" defer></script>
 <script defer src="runtimebundle.js"></script><script defer src="indexbundle.js"></script></head>
 <body>
     <h1>Leaderboard</h1>
@@ -21,27 +15,15 @@
                 <button id="refreshButton">Refresh</button>
             </div>
             <div class="scores" id="scoresList">
-             <!--    <div class="scoreContainer">
-                    <p class="name">Rodrigo</p>
-                    <p class="score">100</p>
-                </div>
-                <div class="scoreContainer">
-                    <p class="name">Rodrigo</p>
-                    <p class="score">100</p>
-                </div>
-                <div class="scoreContainer">
-                    <p class="name">Rodrigo</p>
-                    <p class="score">100</p>
-                </div> -->
             </div>
         </section>
         <section class="addScoreSection">
             <h2>Add your Score</h2>
+            <input type="hidden" name="id" value="" id="id">
             <input type="text" name="nameInput" id="nameInput" placeholder="Your name">
-            <input type="text" name="scoreInput" id="scoreInput" placeholder="Your Score">
+            <input type="number" name="scoreInput" id="scoreInput" placeholder="Your Score">
             <button id="submitInputButton">Submit</button>
         </section>
     </main>
->>>>>>> Stashed changes
 </body>
 </html>
