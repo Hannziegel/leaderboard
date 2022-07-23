@@ -1,20 +1,11 @@
-import _ from 'lodash';
 import './style.css';
-import { nameInput, scoreInput, submitInputButton, refreshButton } from './modules/htmlConsts';
+import { nameInput, scoreInput, submitInputButton, refreshButton } from './modules/htmlConsts.js';
 import { removeAllChildHTML } from './modules/pageFunctions.js';
 import { setLocalStorage, checkLocalStorage, getLocalStorageID, checkLocalStorageID } from './modules/localStorageFunctions.js';
-import { postScore, getScores, createGame } from './modules/leaderboardApi';
+import { postScore, getScores, createGame } from './modules/leaderboardApi.js';
 import Scores from './modules/Scores.js';
 
-
-/* ----------========== LEADERBOARD API ==========---------- */
-if (!checkLocalStorageID()) {
-  createGame(loadPage);
-} else {
-  loadPage();
-}
-
-export function loadPage() {
+function loadPage() {
   const gameId = getLocalStorageID();
   let scoresList = new Scores(getScores(gameId));
   setLocalStorage(scoresList.scores);
@@ -22,23 +13,24 @@ export function loadPage() {
   const generateHtmlElements = async () => {
     await scoresList.scores;
     checkLocalStorage(scoresList.scores);
-  }
+  };
 
-  generateHtmlElements()
-
-  /* ----------========== ADD NEW SCORE ==========---------- */
+  generateHtmlElements();
 
   submitInputButton.addEventListener('click', () => {
-    postScore(gameId, nameInput.value, scoreInput.value)
-  })
-
-  /* ----------========== REFRESH SCORES ==========---------- */
+    postScore(gameId, nameInput.value, scoreInput.value);
+  });
 
   refreshButton.addEventListener('click', () => {
     removeAllChildHTML();
     scoresList = new Scores(getScores(gameId));
     setLocalStorage(scoresList.scores);
     generateHtmlElements();
-  })
-}
+  });
+};
 
+if (!checkLocalStorageID()) {
+  createGame(loadPage);
+} else {
+  loadPage();
+};

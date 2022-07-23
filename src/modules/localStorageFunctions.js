@@ -1,8 +1,8 @@
-import { createScoresListHTML } from '../modules/pageFunctions';
+import { createScoresListHTML } from '../modules/pageFunctions.js';
 
 export function setLocalStorage(listArray) {
   localStorage.setItem('data', JSON.stringify(listArray));
-};
+}
 
 export function checkLocalStorage(listArray) {
   if (localStorage.getItem('data') !== null) {
@@ -11,10 +11,10 @@ export function checkLocalStorage(listArray) {
   } else {
     return listArray = [];
   }
-};
+}
 
 export function getLocalStorageArr() {
-  return JSON.parse(localStorage.getItem('data'))
+  return JSON.parse(localStorage.getItem('data'));
 }
 
 export async function setLocalStorageID(localID) {
@@ -22,12 +22,12 @@ export async function setLocalStorageID(localID) {
 }
 
 export function getLocalStorageID() {
-  return JSON.parse(localStorage.getItem('id'))
+  return JSON.parse(localStorage.getItem('id'));
 }
 
 export function checkLocalStorageID() {
   if(localStorage.getItem('id') !== null) {
-    return true
+    return true;
   }
-  return false
+  return false;
 }

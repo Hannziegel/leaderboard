@@ -1,5 +1,5 @@
 export default class Scores {
-  constructor (scores) {
+  constructor(scores) {
     this.scores = scores;
   }
 
@@ -8,4 +8,4 @@ export default class Scores {
   refreshAll = () => {
     this.scores = [];
   };
-};
+}

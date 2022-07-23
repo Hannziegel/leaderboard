@@ -1,7 +1,6 @@
-import { scoresDiv } from "./htmlConsts";
+import { scoresDiv } from './htmlConsts.js';
 
 export const addScoreHTML = (user, score, scoreIndex) => {
-  console.log('addScoreHTML', user, score, scoreIndex)
   const scoreContainer = document.createElement('div');
 
   const scoreUser  = document.createElement('p');
@@ -18,14 +17,10 @@ export const addScoreHTML = (user, score, scoreIndex) => {
 
   scoresDiv.appendChild(scoreContainer);
   scoreContainer.append(scoreUser, scoreScore);
-
-  console.log('addScoreHTML ', scoreUser.textContent, scoreScore.textContent)
 }
 
 export const createScoresListHTML = (listArr) => {
-  console.log('createScoresListHTML listArr = ', listArr)
   listArr.forEach((e, index) => {
-    console.log('createScoresListHTML ', e.user, e.score, index)
     addScoreHTML(e.user, e.score, index);
   });
 }
@@ -33,6 +28,5 @@ export const createScoresListHTML = (listArr) => {
 export const removeAllChildHTML = () => {
   while (scoresDiv.lastChild){
     scoresDiv.removeChild(scoresDiv.lastChild);
-  }
+  };
 }
-

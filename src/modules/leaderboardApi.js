@@ -1,20 +1,21 @@
-import { setLocalStorageID, setLocalStorage } from "./localStorageFunctions";
+import { setLocalStorageID, setLocalStorage } from './localStorageFunctions.js';
 
 /* --------===========  Generate Games ID ===========-------- */
 export const createGame = async (loadPage) => {
   let id;
   await fetch(
     'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(
-      {
-        name: 'Nunito Game',
-      }
-    ),
-  })
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(
+        {
+          name: 'Nunito Game',
+        },
+      ),
+    }
+  )
     .then((data) => data.json()).then((data) => data.result.split(' ')[3])
     .then((data) => {
       id = data;
@@ -33,7 +34,7 @@ export const postScore = async (urlID, user, score) => {
     body: JSON.stringify(
       {
         user,
-        score
+        score,
       },
     ),
   }).then((data) => data.json());
