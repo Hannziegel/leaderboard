@@ -1,19 +1,5 @@
 import _ from 'lodash';
 import './style.css';
-<<<<<<< Updated upstream
-
-function component() {
-  const element = document.createElement('div');
-
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-
-  return element;
-}
-
-document.body.appendChild(component());
-=======
 import { nameInput, scoreInput, submitInputButton, refreshButton } from './modules/htmlConsts';
 import { removeAllChildHTML } from './modules/pageFunctions.js';
 import { setLocalStorage, checkLocalStorage, setLocalStorageID, getLocalStorageID, checkLocalStorageID, getLocalStorageArr } from './modules/localStorageFunctions.js';
@@ -61,4 +47,4 @@ export function loadPage() {
     generateHtmlElements();
   })
 }
->>>>>>> Stashed changes
+
