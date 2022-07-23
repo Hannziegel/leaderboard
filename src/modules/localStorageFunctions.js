@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createScoresListHTML } from '../modules/pageFunctions.js';
 
 export function setLocalStorage(listArray) {
