@@ -1,3 +1,151 @@
-.hello {
-  color: red;
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700&display=swap");
+
+:root {
+  /* --== Paddings ==-- */
+  --containerPadding: 8px 5vw;
+
+  /* --== Typography ==-- */
+
+  /* Font Family */
+  --font-family: 'Comic Neue', sans-serif;
+
+  /* Font sizes */
+  --font-size: 1rem;
+
+  /* Font Weight */
+  --font-weight: 700;
+
+  /* --== Color Pallet ==-- */
+  --color-dark: black;
+  --color-gray: rgb(156, 147, 147);
+  --color-light: rgba(230, 230, 230, 0.795);
+  --color-white: #fff;
+}
+
+/* ----------========== GLOBAL ==========---------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  text-decoration: none;
+  color: black;
+}
+
+html {
+  background-color: var(--color-white);
+}
+
+h1 {
+  padding: var(--containerPadding);
+  margin-top: 5vh;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+h2 {
+  padding: 24px 0;
+  font-size: 2rem;
+}
+
+ul li {
+  list-style: none;
+}
+
+button {
+  padding: 3px;
+  border: 1px solid black;
+  align-self: flex-end;
+  box-shadow: 5px 5px black;
+  transition-duration: 0.1s;
+  background-color: white;
+}
+
+button:hover {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+}
+
+button:active {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+  background-color: var(--color-gray);
+}
+
+section {
+  padding: var(--containerPadding);
+}
+
+input {
+  outline: 3px solid black;
+  border: none;
+}
+
+/* --== Main Section ==-- */
+
+main {
+  display: flex;
+}
+
+/* --== Recent Scores Section ==-- */
+
+.scoresSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.scoresTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.scoresTitle button {
+  align-self: center;
+}
+
+.scores {
+  outline: 3px solid black;
+  width: 100%;
+}
+
+.scores :nth-child(even) {
+  background-color: var(--color-light);
+}
+
+.scoreContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.scoreContainer :nth-child(even) {
+  background-color: transparent;
+}
+
+/* --== Add Score Section ==-- */
+
+.addScoreSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.addScoreSection input {
+  padding: 10px;
+  width: 100%;
+}
+
+.addScoreSection button {
+  padding: 5px 10px;
 }
