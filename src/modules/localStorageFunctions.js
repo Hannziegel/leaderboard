@@ -9,8 +9,9 @@ export function checkLocalStorage(listArray) {
     listArray = JSON.parse(localStorage.getItem('data'));
     createScoresListHTML(listArray);
   } else {
-    return listArray = [];
+    listArray = [];
   }
+  return
 }
 
 export function getLocalStorageArr() {
@@ -26,7 +27,7 @@ export function getLocalStorageID() {
 }
 
 export function checkLocalStorageID() {
-  if(localStorage.getItem('id') !== null) {
+  if (localStorage.getItem('id') !== null) {
     return true;
   }
   return false;
