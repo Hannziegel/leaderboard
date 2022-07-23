@@ -11,7 +11,6 @@ export function checkLocalStorage(listArray) {
   } else {
     listArray = [];
   }
-  return
 }
 
 export function getLocalStorageArr() {

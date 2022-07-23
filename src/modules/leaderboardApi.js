@@ -45,8 +45,10 @@ export const postScore = async (urlID, user, score) => {
 export const getScores = async (urlID) => {
   await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${urlID}/scores`)
     .then((data) => data.json())
-    .then((dataJson) => {dataJson = dataJson.result})
-    .then((dataArr) => {
-      setLocalStorage(dataArr);
+    .then((data) => {
+      data = data.result;
+    })
+    .then((data) => {
+      setLocalStorage(data);
     });
 };
