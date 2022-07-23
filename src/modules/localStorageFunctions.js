@@ -2,7 +2,6 @@ import { createScoresListHTML } from '../modules/pageFunctions';
 
 export function setLocalStorage(listArray) {
   localStorage.setItem('data', JSON.stringify(listArray));
-  console.log('setLocalStorage: listArray = ', listArray)
 };
 
 export function checkLocalStorage(listArray) {
@@ -20,7 +19,6 @@ export function getLocalStorageArr() {
 
 export async function setLocalStorageID(localID) {
   localStorage.setItem('id', JSON.stringify(localID));
-  console.log('setLocalStorageID localID = ', localID);
 }
 
 export function getLocalStorageID() {

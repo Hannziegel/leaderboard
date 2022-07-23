@@ -18,10 +18,8 @@ export const createGame = async (loadPage) => {
     .then((data) => data.json()).then((data) => data.result.split(' ')[3])
     .then((data) => {
       id = data;
-      /*  console.log(id) */
       setLocalStorageID(id);
       loadPage();
-      /* console.log('createGame data = ', data) */
     })
 };
 
@@ -49,6 +47,5 @@ export const getScores = async (urlID) => {
     .then((dataJson) => dataJson = dataJson.result)
     .then((dataArr) => {
       setLocalStorage(dataArr);
-      console.log('getScores dataArr = ', dataArr)
     })
 }
