@@ -17,9 +17,8 @@
   --font-weight: 700;
 
   /* --== Color Pallet ==-- */
-  --color-blueish: #3CDBC0;
+  --color-blueish: #3cdbc0;
   --color-darkgray: #121d1d;
-
   --color-dark: black;
   --color-gray: rgb(156, 147, 147);
   --color-light: rgba(230, 230, 230, 0.795);
@@ -65,6 +64,8 @@ ul li {
 
 input {
   color: var(--color-darkgray);
+  outline: 3px solid black;
+  border: none;
 }
 
 button {
@@ -90,11 +91,6 @@ button:active {
 
 section {
   padding: var(--containerPadding);
-}
-
-input {
-  outline: 3px solid black;
-  border: none;
 }
 
 /* --== Main Section ==-- */
@@ -155,7 +151,7 @@ main {
   width: 100%;
 }
 
-.addScoreSection :hover{
+.addScoreSection :hover {
   transform: scale(1.1);
   transition-duration: 1.2s;
 }
