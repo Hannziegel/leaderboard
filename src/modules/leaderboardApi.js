@@ -6,16 +6,16 @@ export const createGame = async (loadPage) => {
   let id;
   await fetch(
     'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(
-        {
-          name: 'Nunito Game',
-        },
-      ),
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
     },
+    body: JSON.stringify(
+      {
+        name: 'Nunito Game',
+      },
+    ),
+  },
   )
     .then((data) => data.json()).then((data) => data.result.split(' ')[3])
     .then((data) => {
@@ -46,10 +46,8 @@ export const postScore = async (urlID, user, score) => {
 export const getScores = async (urlID) => {
   await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${urlID}/scores`)
     .then((data) => data.json())
-    .then((data) => {
-      data = data.result;
-    })
-    .then((data) => {
-      setLocalStorage(data);
+    .then((dataJson) => {
+      dataJson = dataJson.result;
+      setLocalStorage(dataJson);
     });
 };

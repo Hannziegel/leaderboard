@@ -1,11 +1,11 @@
 /* eslint-disable */
 import { createScoresListHTML } from '../modules/pageFunctions.js';
 
-export function setLocalStorage(listArray) {
+export const setLocalStorage = (listArray) => {
   localStorage.setItem('data', JSON.stringify(listArray));
 }
 
-export function checkLocalStorage(listArray) {
+export const checkLocalStorage  = (listArray) =>   {
   if (localStorage.getItem('data') !== null) {
     listArray = JSON.parse(localStorage.getItem('data'));
     createScoresListHTML(listArray);
@@ -14,7 +14,7 @@ export function checkLocalStorage(listArray) {
   }
 }
 
-export function getLocalStorageArr() {
+export const getLocalStorageArr = () =>  {
   return JSON.parse(localStorage.getItem('data'));
 }
 
@@ -22,11 +22,11 @@ export async function setLocalStorageID(localID) {
   localStorage.setItem('id', JSON.stringify(localID));
 }
 
-export function getLocalStorageID() {
+export const getLocalStorageID = () => {
   return JSON.parse(localStorage.getItem('id'));
 }
 
-export function checkLocalStorageID() {
+export const checkLocalStorageID = () =>  {
   if (localStorage.getItem('id') !== null) {
     return true;
   }
