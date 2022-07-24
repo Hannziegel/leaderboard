@@ -31,7 +31,7 @@ const loadPage = () => {
     setLocalStorage(scoresList.scores);
     generateHtmlElements();
   });
-}
+};
 
 if (!checkLocalStorageID()) {
   createGame(loadPage);
