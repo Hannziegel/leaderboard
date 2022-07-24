@@ -1,5 +1,4 @@
-/* eslint-disable */
-import { createScoresListHTML } from '../modules/pageFunctions.js';
+import { createScoresListHTML } from './pageFunctions.js';
 
 export const setLocalStorage = (listArray) => {
   localStorage.setItem('data', JSON.stringify(listArray));
@@ -18,7 +17,7 @@ export const getLocalStorageArr = () =>  {
   return JSON.parse(localStorage.getItem('data'));
 }
 
-export async function setLocalStorageID(localID) {
+export  const setLocalStorageID = async (localID) => {
   localStorage.setItem('id', JSON.stringify(localID));
 }
 

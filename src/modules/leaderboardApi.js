@@ -1,33 +1,29 @@
-/* eslint-disable */
 import { setLocalStorageID, setLocalStorage } from './localStorageFunctions.js';
 
 /* --------===========  Generate Games ID ===========-------- */
 export const createGame = async (loadPage) => {
-  let id;
-  await fetch(
+  const idFetch = await fetch(
     'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(
-      {
-        name: 'Nunito Game',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
       },
-    ),
-  },
-  )
-    .then((data) => data.json()).then((data) => data.result.split(' ')[3])
-    .then((data) => {
-      id = data;
-      setLocalStorageID(id);
-      loadPage();
-    });
+      body: JSON.stringify(
+        {
+          name: 'Nunito Game',
+        },
+      ),
+    },
+  );
+  const idJson = await idFetch.json();
+  const id = idJson.result.split(' ')[3];
+  setLocalStorageID(id);
+  loadPage();
 };
 
 /* --------===========  Post New Score ===========-------- */
 export const postScore = async (urlID, user, score) => {
-  await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${urlID}/scores`, {
+  const scoreFetch = await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${urlID}/scores`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -38,7 +34,9 @@ export const postScore = async (urlID, user, score) => {
         score,
       },
     ),
-  }).then((data) => data.json());
+  });
+  const scoreJson = await scoreFetch.json();
+  return scoreJson;
 };
 
 /* --------===========  Get Scores ===========-------- */

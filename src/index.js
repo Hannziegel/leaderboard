@@ -9,7 +9,7 @@ import {
 import { postScore, getScores, createGame } from './modules/leaderboardApi.js';
 import Scores from './modules/Scores.js';
 
-function loadPage() {
+const loadPage = () => {
   const gameId = getLocalStorageID();
   let scoresList = new Scores(getScores(gameId));
   setLocalStorage(scoresList.scores);
