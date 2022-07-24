@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wbpack Exercise</title>
-<script defer src="main.js"></script></head>
+    <link rel="stylesheet" href="style.css">
+<script defer src="runtimebundle.js"></script><script defer src="indexbundle.js"></script></head>
 <body>
-    <h1>Hello webpack!</h1>
+    <h1>Leaderboard</h1>
+    <main class="main">
+        <section class="scoresSection">
+            <div class="scoresTitle">
+                <h2>Recent Scores</h2>
+                <button id="refreshButton">Refresh</button>
+            </div>
+            <div class="scores" id="scoresList">
+            </div>
+        </section>
+        <section class="addScoreSection">
+            <h2>Add your Score</h2>
+            <input type="hidden" name="id" value="" id="id">
+            <input type="text" name="nameInput" id="nameInput" placeholder="Your name">
+            <input type="number" name="scoreInput" id="scoreInput" placeholder="Your Score">
+            <button id="submitInputButton">Submit</button>
+        </section>
+    </main>
 </body>
 </html>
