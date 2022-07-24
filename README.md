@@ -2,19 +2,22 @@
 # Leaderboard:
 - A Website application to show and add scores to a leaderboard made with JavaScript, Webpack, and leaderboard API.
 
+# Preview Image
+![leaderBoardPreview](https://user-images.githubusercontent.com/47539402/180629253-22ded8ac-158c-4722-a5ac-b166a02bb14a.jpg)
+
 ## Acces link
 
-[Live Demo](https://hannziegel.github.io/leaderboard/dist/)
+[LIVE DEMO](https://hannziegel.github.io/leaderboard/dist/)
 
 ## Setup
 
-      Clone this repo
+>      Clone this repo
+ 
+>      cd Leaderboard
 
-      cd Leaderboard
+>      npm install
 
-      npm install
-
-      npm start
+>     npm start
 
 ## Built With
 ![](https://img.shields.io/badge/-HTML-orange) ![](https://img.shields.io/badge/-CSS-blue) ![](https://img.shields.io/badge/-JavaScript-yellow) ![](https://img.shields.io/badge/-webpack-9cf)
